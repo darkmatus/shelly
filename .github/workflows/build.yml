@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Set up Go
         uses: actions/setup-go@v4.1.0
@@ -20,7 +20,8 @@ jobs:
 
       - name: Build and Test
         run: |
-          ssh-agent sh -c 'echo "${{ secrets.SSH_PRIVATE_KEY }}" | ssh-add -'
+          eval `ssh-agent -s`
+          ssh-add - <<< '${{ secrets.SSH_PRIVATE_KEY }}'
           ./scripts/build.sh
           make audit
           make test
