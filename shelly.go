@@ -6,7 +6,7 @@ import (
 )
 
 // NewShelly creates a Shelly charger from generic config
-func NewShelly(URI string, User string, Password string, Channel int) (util.Meter, error) {
+func NewShelly(URI string, User string, Password string, Channel int) (*Switch, error) {
 
 	conn, err := connection.NewConnection(URI, User, Password, Channel)
 	if err != nil {
