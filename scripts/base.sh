@@ -139,7 +139,6 @@ function gracefull_shutdown_docker_compose() {
 #
 # Common variables
 #
-export REGISTRY_IMAGE=${CI_REGISTRY_IMAGE:-"registry.s-p-it.de/"$(git remote get-url origin | cut -d: -f2 | cut -d. -f1)}
-export COMMIT_SHORT_SHA=${CI_COMMIT_SHORT_SHA:-$(git rev-parse --short HEAD)}
+export IMAGE="darkmatus/shelly"
 
 build_image=go-base-build
