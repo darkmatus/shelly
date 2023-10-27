@@ -1,0 +1,7 @@
+{
+  "name": "gardenwatering",
+  "version": "1",
+  "namespace": "go",
+  "prefix": "GW",
+  "traffic-type": "private"
+}
