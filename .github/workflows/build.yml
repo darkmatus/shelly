@@ -19,10 +19,9 @@ jobs:
           go-version: '1.21.3'
 
       - name: Build and Test
-        uses: webfactory/ssh-agent@v0.8.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
+          eval `ssh-agent -s`
+          ssh-add - <<< '${{ secrets.SSH_PRIVATE_KEY }}'
           ./scripts/build.sh
           make audit
           make test
