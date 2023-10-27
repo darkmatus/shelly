@@ -20,8 +20,7 @@ jobs:
 
       - name: Build and Test
         run: |
-          eval `ssh-agent -s`
-          ssh-add - <<< '${{ secrets.SSH_PRIVATE_KEY }}'
+          ssh-agent sh -c 'echo "${{ secrets.SSH_PRIVATE_KEY }}" | ssh-add -
           ./scripts/build.sh
           make audit
           make test
