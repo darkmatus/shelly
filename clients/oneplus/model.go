@@ -1,4 +1,4 @@
-package Oneplus
+package oneplus
 
 type SwitchResponse struct {
 	Isok bool       `json:"isok"`

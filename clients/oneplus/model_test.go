@@ -1,4 +1,4 @@
-package Oneplus
+package oneplus
 
 import (
 	"encoding/json"

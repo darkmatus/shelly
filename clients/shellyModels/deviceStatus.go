@@ -1,4 +1,4 @@
-package ShellyModels
+package shellymodels
 
 type Status struct {
 	Isok bool `json:"isok"`

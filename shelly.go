@@ -3,7 +3,7 @@ package shelly
 import (
 	"fmt"
 	"github.com/darkmatus/shelly/clients"
-	"github.com/darkmatus/shelly/clients/Oneplus"
+	"github.com/darkmatus/shelly/clients/oneplus"
 )
 
 const (
@@ -14,7 +14,7 @@ const (
 func NewShelly(deviceType string, authKey string, baseURL string, deviceID string) (clients.ShellyInterface, error) {
 	switch deviceType {
 	case Device1Plus:
-		return Oneplus.NewClient(authKey, baseURL, deviceID), nil
+		return oneplus.NewClient(authKey, baseURL, deviceID), nil
 	default:
 		return nil, fmt.Errorf("given device type '%s' is currently not supported", deviceType)
 	}

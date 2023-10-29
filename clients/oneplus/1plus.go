@@ -1,10 +1,10 @@
-package Oneplus
+package oneplus
 
 import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	ShellyModels "github.com/darkmatus/shelly/clients/shellyModels"
+	shellymodels "github.com/darkmatus/shelly/clients/shellyModels"
 	"io"
 	"mime/multipart"
 	"net/http"
@@ -30,8 +30,8 @@ func NewClient(authKey string, baseURL string, deviceID string) *Shelly1Plus {
 }
 
 // GetDeviceStatus returns the status of the device
-func (s *Shelly1Plus) GetDeviceStatus() (ShellyModels.Status, error) {
-	status := ShellyModels.Status{}
+func (s *Shelly1Plus) GetDeviceStatus() (shellymodels.Status, error) {
+	status := shellymodels.Status{}
 	url := fmt.Sprintf("%s/device/status?id=%s&auth_key=%s", s.BaseURL, s.DeviceID, s.AuthKey)
 
 	response, err := s.HTTPClient.Get(url)
