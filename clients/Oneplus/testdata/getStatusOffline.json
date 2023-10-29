@@ -1,0 +1,66 @@
+{
+  "isok": true,
+  "data": {
+    "online": false,
+    "device_status": {
+      "serial": 1698574914,
+      "mqtt": {
+        "connected": false
+      },
+      "switch:0": {
+        "id": 0,
+        "source": "SHC",
+        "output": false,
+        "temperature": {
+          "tC": 38.6,
+          "tF": 101.5
+        }
+      },
+      "id": "08b61fd83638",
+      "ws": {
+        "connected": false
+      },
+      "v_eve:0": {
+        "ev": "",
+        "ttl": -1,
+        "id": 0
+      },
+      "sys": {
+        "mac": "08B61FD83638",
+        "restart_required": false,
+        "time": "11:21",
+        "unixtime": 1698574914,
+        "uptime": 79358,
+        "ram_size": 244848,
+        "ram_free": 141928,
+        "fs_size": 458752,
+        "fs_free": 159744,
+        "cfg_rev": 11,
+        "kvs_rev": 0,
+        "schedule_rev": 0,
+        "webhook_rev": 0,
+        "available_updates": {
+          "beta": {
+            "version": "1.0.7-beta2"
+          }
+        }
+      },
+      "ble": [],
+      "cloud": {
+        "connected": true
+      },
+      "wifi": {
+        "sta_ip": "192.168.0.117",
+        "status": "got ip",
+        "ssid": "TP-Link_BE60",
+        "rssi": -72
+      },
+      "input:0": {
+        "id": 0,
+        "state": false
+      },
+      "_updated": "2023-10-29 10:21:55",
+      "code": "SNSW-001X16EU"
+    }
+  }
+}

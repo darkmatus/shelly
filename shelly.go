@@ -1,27 +1,21 @@
 package shelly
 
 import (
-	"github.com/darkmatus/shelly/connection"
-	"github.com/darkmatus/shelly/util"
+	"fmt"
+	"github.com/darkmatus/shelly/clients"
+	"github.com/darkmatus/shelly/clients/Oneplus"
+)
+
+const (
+	Device1Plus = "1plus"
 )
 
 // NewShelly creates a Shelly charger from generic config
-func NewShelly(URI string, User string, Password string, Channel int) (*Switch, error) {
-
-	conn, err := connection.NewConnection(URI, User, Password, Channel)
-	if err != nil {
-		return nil, err
+func NewShelly(deviceType string, authKey string, baseURL string, deviceID string) (clients.ShellyInterface, error) {
+	switch deviceType {
+	case Device1Plus:
+		return Oneplus.NewClient(authKey, baseURL, deviceID), nil
+	default:
+		return nil, fmt.Errorf("given device type '%s' is currently not supported", deviceType)
 	}
-
-	return NewSwitch(conn), nil
-}
-
-// NewShellyEnergyMeter creates a Shelly from given data
-func NewShellyEnergyMeter(URI string, User string, Password string, Channel int) (util.Meter, error) {
-	conn, err := connection.NewConnection(URI, User, Password, Channel)
-	if err != nil {
-		return nil, err
-	}
-
-	return NewEnergyMeter(conn), nil
 }

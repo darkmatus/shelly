@@ -8,11 +8,17 @@ It provides functions for shelly's with and without energymeter.
 ## Usage
 Call `go get github.com/darkmatus/shelly` in your project.
 
-Create your required instance:
+Create your required instance (current only Shelly 1plus is supported):
+
 ```go
-	var shelly, _ = NewShelly("123", "user", "pw", 0)
-err := shelly.Enable(true)
-if err != nil {
-return
-}
+	client, err := shelly.NewShelly(deviceType, authKey, baseURL, deviceID)
+    if err != nil {
+        return
+    }
 ```
+Use the shelly.Device* constants to create your device.
+
+## How to add a client.
+If you want to add a new client, implement the ShellyInterface for devices which are switches. The interface requires
+`on`, `off`, `toggle` and `getDeviceStatus`.
+Don't forget to write tests. Add create a merge request.
