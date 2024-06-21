@@ -29,7 +29,7 @@ type Beta struct {
 	Version string `json:"version"`
 }
 type AvailableUpdates struct {
-	Beta Beta `json:"beta"`
+	Beta []Beta `json:"beta"`
 }
 type Sys struct {
 	Mac              string           `json:"mac"`

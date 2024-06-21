@@ -119,7 +119,7 @@ func (s *Shelly1Plus) Off(channelID int) (bool, error) {
 	// POST-Request erstellen
 	req, err := http.NewRequest("POST", uri, body)
 	if err != nil {
-		fmt.Println("error while creating http-requestHTTP-Requests:", err)
+		fmt.Println("error while creating http-request:", err)
 		return false, err
 	}
 	req.Header.Set("Content-Type", contentType)
